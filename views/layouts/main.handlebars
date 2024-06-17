@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tech Blog</title>
+<link rel="stylesheet" href="/css/style.css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link
+    href="https://cdn.jsdelivr.net/npm/daisyui@2.6.0/dist/full.css"
+    rel="stylesheet"
+    type="text/css"
+  />
+  <body class="flex flex-col min-h-screen">
+    <div
+      class="navbar bg-blue-500 h-32 mb-14 border-4 z-[999] flex items-center justify-between w-full"
+    >
+
+      <a href="/" class="btn btn-ghost text-xl text-white text-lg">Tech Talk</a>
+      <ul class="menu menu-horizontal px-1">
+        <li><a href="/gigRepo" class="text-white text-lg">View Blogs</a></li>
+        <li><a href="/gigPost" class="text-white text-lg">Post Blogs</a></li>
+		 <!-- Render script for logged in users only -->
+      {{#if logged_in}}
+        <li><a id="logout" class="text-white text-lg">Logout</a></li>
+       {{else}}
+        <li><a href="/loginSignup" class="text-white text-lg">Sign Up</a></li>
+		{{/if}}
+      </ul>
+    </div>
+</div>
+{{{body}}}
+
+
+
+{{#if logged_in}}
+  <script src="/js/logout.js"></script>
+{{/if}}
+</body>
+</html>
